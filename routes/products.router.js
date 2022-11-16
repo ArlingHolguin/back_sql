@@ -3,6 +3,7 @@ const faker = require('faker');
 
 const router = express.Router();
 
+// GET /products
 router.get('/', (req, res) => {
     const products = [];
     const { size } = req.query;
@@ -16,11 +17,11 @@ router.get('/', (req, res) => {
     }
     res.json(products);
 });
-
+//GET products/filter
 router.get('/filter', (req, res) => {
     res.send('Yo soy un filter');
 });
-
+// GET /products/:id
 router.get('/:id', (req, res) => {
     const { id } = req.params;
     res.json({
